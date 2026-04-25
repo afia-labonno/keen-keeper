@@ -4,9 +4,9 @@ const Banner = () => {
 
     const summaryCards = [
         {id: 1, count : 6, label: 'Total Friends'},
-        {id: 1, count : 3, label: 'On Track'},
-        {id: 1, count : 2, label: 'Need Attention'},
-        {id: 1, count : 6, label: 'Interactions This Month'},
+        {id: 2, count : 3, label: 'On Track'},
+        {id: 3, count : 2, label: 'Need Attention'},
+        {id: 4, count : 6, label: 'Interactions This Month'},
     ];
 
     return (
@@ -24,7 +24,7 @@ const Banner = () => {
                     {
                         summaryCards.map((card) => 
                            <div key={card.id} 
-                                className="card flex flex-col bg-base-100 shadow-md rounded-xl">
+                                className="card flex flex-col bg-base-100 shadow-lg border border-base-200 rounded-xl">
                                 <div className="card-body flex flex-col items-center py-6">
                                     <h2 className="text-3xl text-green-950 font-bold">{card.count}</h2>
                                     <p>{card.label}</p>

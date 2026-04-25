@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Ayesha Rahman",
+    "picture": "https://randomuser.me/api/portraits/women/21.jpg",
+    "email": "ayesha.rahman@example.com",
+    "days_since_contact": "5d ago",
+    "status": "On-Track",
+    "tags": ["school friend", "close friend"],
+    "bio": "My best school friend. We still talk every week.",
+    "goal": 7,
+    "next_due_date": "2026-04-28"
+  },
+  {
+    "id": 2,
+    "name": "Mehedi Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "mehedi.hasan@example.com",
+    "days_since_contact": "18d ago",
+    "status": "Overdue",
+    "tags": ["college", "coding buddy"],
+    "bio": "Met in college during programming contests.",
+    "goal": 14,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 3,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/45.jpg",
+    "email": "nusrat.jahan@example.com",
+    "days_since_contact": "10d ago",
+    "status": "Almost Due",
+    "tags": ["university", "study partner"],
+    "bio": "We used to study together for exams.",
+    "goal": 12,
+    "next_due_date": "2026-04-26"
+  },
+  {
+    "id": 4,
+    "name": "Tanvir Ahmed",
+    "picture": "https://randomuser.me/api/portraits/men/41.jpg",
+    "email": "tanvir.ahmed@example.com",
+    "days_since_contact": "2d ago",
+    "status": "On-Track",
+    "tags": ["gym friend", "fitness"],
+    "bio": "Gym buddy, motivates me to stay consistent.",
+    "goal": 7,
+    "next_due_date": "2026-04-26"
+  },
+  {
+    "id": 5,
+    "name": "Sadia Islam",
+    "picture": "https://randomuser.me/api/portraits/women/68.jpg",
+    "email": "sadia.islam@example.com",
+    "days_since_contact": "22d ago",
+    "status": "Overdue",
+    "tags": ["college", "best friend"],
+    "bio": "Known her since first year of college.",
+    "goal": 14,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 6,
+    "name": "Rakib Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/55.jpg",
+    "email": "rakib.hossain@example.com",
+    "days_since_contact": "7d ago",
+    "status": "On-Track",
+    "tags": ["work", "colleague"],
+    "bio": "Work colleague, often collaborate on projects.",
+    "goal": 10,
+    "next_due_date": "2026-04-29"
+  },
+  {
+    "id": 7,
+    "name": "Fariha Noor",
+    "picture": "https://randomuser.me/api/portraits/women/12.jpg",
+    "email": "fariha.noor@example.com",
+    "days_since_contact": "14d ago",
+    "status": "Almost Due",
+    "tags": ["school friend"],
+    "bio": "Old school friend, lost touch sometimes but reconnecting.",
+    "goal": 14,
+    "next_due_date": "2026-04-24"
+  },
+  {
+    "id": 8,
+    "name": "Shakil Ahmed",
+    "picture": "https://randomuser.me/api/portraits/men/18.jpg",
+    "email": "shakil.ahmed@example.com",
+    "days_since_contact": "30d ago",
+    "status": "Overdue",
+    "tags": ["childhood", "close friend"],
+    "bio": "Childhood friend, grew up in same neighborhood.",
+    "goal": 14,
+    "next_due_date": "2026-04-01"
+  }
+]
