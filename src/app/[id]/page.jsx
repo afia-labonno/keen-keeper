@@ -1,3 +1,5 @@
+
+import ContactButtons from "@/Component/FriendsInteraction/ContactButtons";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CiEdit, CiVideoOn } from "react-icons/ci";
@@ -38,7 +40,7 @@ const contacts = [
 const FriendDetailsPage = async ({ params }) => {
     const friends = await friendPromise();
     const { id } = await params;
-    console.log("params :", id)
+    // console.log("params :", id)
     const friend = friends.find((friend) => friend.id === parseInt(id));
     // console.log("friend:" , friend);
     if (!friend) {
@@ -47,10 +49,12 @@ const FriendDetailsPage = async ({ params }) => {
 
     return (
        
-        <div className="container mx-auto px-20 py-8 grid grid-cols-1 lg:grid-cols-5 gap-8">
+        // <div className="container mx-auto px-20 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8 my-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] py-8 my-10
+                grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             {/* Left-column */}
-            <div className="lg:col-span-2 space-y-4 ">
+            <div className="lg:col-span-1 space-y-4 ">
 
                 {/* profile */}
                 <div className="card bg-base-100 w-full shadow-lg border border-base-200 py-6">
@@ -110,27 +114,27 @@ const FriendDetailsPage = async ({ params }) => {
 
 
             {/* Right-column */}
-            <div className="lg:col-span-3 space-y-6">
+            <div className="lg:col-span-2 space-y-6">
 
                 {/* Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
                     <div className="card shadow-lg border border-base-200 text-center py-8 px-4">
-                        <h2 className="text-3xl font-bold text-green-900">
+                        <h2 className="text-xl lg:text-3xl font-bold text-green-900">
                             {friend.days_since_contact}
                         </h2>
                         <p className="text-gray-600">Days Since Contact</p>
                     </div>
 
                     <div className="card shadow-lg border border-base-200 text-center py-8 px-4">
-                        <h2 className="text-3xl font-bold text-green-900">
+                        <h2 className="text-xl lg:text-3xl font-bold text-green-900">
                             {friend.goal}
                         </h2>
-                        <p className="text-gray-600">Goal<span> (Days)</span></p>
+                        <p className="text-gray-600">Goal (Days)</p>
                     </div>
 
                     <div className="card shadow-lg border border-base-200 text-center py-8 px-4">
-                        <h2 className="text-3xl font-bold text-green-900">
+                        <h2 className="text-xl lg:text-3xl font-bold text-green-900">
                             {friend.next_due_date}
                         </h2>
                         <p className="text-gray-600">Next Due</p>
@@ -141,8 +145,8 @@ const FriendDetailsPage = async ({ params }) => {
                 {/* Relationship */}
                 <div className="card py-8 px-6 shadow-lg border border-base-200 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <div>
-                        <h4 className="text-green-900 text-xl font-semibold">Relationship Goal</h4>
-                        <p className="text-gray-600">
+                        <h4 className="text-green-900  text-lg lg:text-xl font-semibold">Relationship Goal</h4>
+                        <p className="text-gray-600 text-sm">
                             Connect every <span className="font-bold">30 days</span>
                         </p>
                     </div>
@@ -154,7 +158,7 @@ const FriendDetailsPage = async ({ params }) => {
 
                 {/* check-in */}
                 <div className="card py-8 px-6 shadow-lg border border-base-200 space-y-4">
-                    <h3 className="text-green-900 font-semibold text-xl">
+                    <h3 className="text-green-900 font-semibold text-lg lg:text-xl">
                         Quick Check-In
                     </h3>
 
@@ -167,7 +171,11 @@ const FriendDetailsPage = async ({ params }) => {
                                 <div className="text-3xl">
                                     {contact.icon}
                                 </div>
-                                <p className="text-lg btn btn-ghost text-gray-700">{contact.type}</p>
+                                {/* buttons are client component here */}
+                                <ContactButtons type={contact.type} friend={friend}/>
+                                {/* <button className="text-lg btn btn-ghost text-gray-700">
+                                        {contact.type}
+                                </button> */}
                             </div>
                         ))}
                     </div>
