@@ -1,5 +1,10 @@
 import React from 'react';
 
+export const metadata = {
+  title: "Stats Page | keenKeepr ",
+  description: "Statistics of the connections",
+};
+
 const StatsPage = () => {
     return (
         <div>

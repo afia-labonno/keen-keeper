@@ -1,4 +1,11 @@
 
+
+export const metadata = {
+  title: "Timeline Page | keenKeepr ",
+  description: "Contact history",
+};
+
+
 const TimelinePage = () => {
     return (
         <div>
