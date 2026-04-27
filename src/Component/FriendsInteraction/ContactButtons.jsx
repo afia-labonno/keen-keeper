@@ -26,7 +26,8 @@ const ContactButtons = ({type, friend}) => {
 
         // console.log(type, 'clicked')
         // logic:
-       setLoading(true);
+       setLoading(true); 
+       
        let message = "" ;
 
        if(type === "call"){

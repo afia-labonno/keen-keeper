@@ -1,18 +1,13 @@
 'use client'
-import { useEffect, useState } from "react";
+import { TimelineContext } from "@/context/TimelineContext";
+import { useContext, useEffect, useState } from "react";
 
 
 const TimelinePage = () => {
-    const [logs, setLogs] = useState([]);
+    const {logs}= useContext(TimelineContext);
+
     const [filter, setFilter] = useState("all");
     const [search, setSearch] = useState('');
-
-    // Data Loading
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem("timeline")) || [];
-        setLogs(data);
-
-    }, []);
 
     const filteredLogs = logs.filter((log) => {
         //filter type
@@ -24,7 +19,7 @@ const TimelinePage = () => {
     });
 
     return (
-        <div className="container mx-auto space-y-4 lg:px-[120px] py-20">
+        <div className="container mx-auto space-y-4 px-20 lg:px-[120px] py-28">
 
             <div className="flex justify-between">
                 <div>
@@ -78,8 +73,6 @@ const TimelinePage = () => {
                    
                 </div>
             </div>
-
-
 
 
             {/* contact History list */}

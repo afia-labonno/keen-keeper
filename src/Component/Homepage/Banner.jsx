@@ -1,12 +1,42 @@
+'use client'
+import { FriendContext } from "@/context/FriendContext";
+import { TimelineContext } from "@/context/TimelineContext";
+import { useContext } from "react";
 import { IoMdAdd } from "react-icons/io";
 
 const Banner = () => {
 
+    const friendContext = useContext(FriendContext);
+    const timelineContext = useContext(TimelineContext);
+
+    if(!friendContext || !timelineContext){
+        return <p>Loading...</p>
+    }
+
+    const {friends} = friendContext ;
+    const {logs} = timelineContext ;
+
+    const totalFriends = friends.length;
+    const onTrack = friends.filter((friend)=> friend.status === "On-Track").length ;
+    const needAttention = friends.filter((friend)=> 
+        (friend.status ===  "Almost Due") || (friend.status === "Overdue")
+    ).length ;
+
+    const now = new Date() ;
+    const interactionThisMonth = logs.filter((log)=> {
+        const logDate = new Date(log.date) ;
+
+        return(
+            logDate.getMonth() === now.getMonth() &&
+             logDate.getFullYear() === now.getFullYear() 
+        );
+    }).length ;
+
     const summaryCards = [
-        {id: 1, count : 6, label: 'Total Friends'},
-        {id: 2, count : 3, label: 'On Track'},
-        {id: 3, count : 2, label: 'Need Attention'},
-        {id: 4, count : 6, label: 'Interactions This Month'},
+        {id: 1, count : totalFriends, label: 'Total Friends'},
+        {id: 2, count : onTrack, label: 'On Track'},
+        {id: 3, count : needAttention, label: 'Need Attention'},
+        {id: 4, count : interactionThisMonth, label: 'Interactions This Month'},
     ];
 
     return (
