@@ -6,16 +6,20 @@ import { useContext, useEffect, useState } from "react";
 const TimelinePage = () => {
     const {logs}= useContext(TimelineContext);
 
-    const [filter, setFilter] = useState("all");
     const [search, setSearch] = useState('');
+    const [sort, setSort] = useState("newest");
 
     const filteredLogs = logs.filter((log) => {
-        //filter type
-        const matchType = filter === "all" || log.type === filter
+        const matchSearch = log.name.toLowerCase().includes(search.toLowerCase()) ||
+         log.type.toLowerCase().includes(search.toLowerCase());
 
-        const matchSearch = log.name.toLowerCase().includes(search.toLocaleLowerCase());
-
-        return matchType && matchSearch
+        return matchSearch
+    }). sort((a,b) =>{
+        if(sort === "newest"){
+            return new Date(b.date) - new Date(a.date)
+        }else{
+            return new Date(a.date) - new Date(b.date)
+        }
     });
 
     return (
@@ -38,23 +42,13 @@ const TimelinePage = () => {
                                 tabIndex="-1"
                                 className="menu dropdown-content bg-base-200 rounded-box z-1 mt-4 w-52 p-2 shadow-sm">
                                 <li>
-                                    <button onClick={() => setFilter("all")} className="btn btn-sm">
-                                        All
+                                    <button onClick={() => setSort("newest")} className="btn btn-sm">
+                                        newest
                                     </button>
                                 </li>
                                 <li>
-                                    <button onClick={() => setFilter("call")} className="btn btn-sm">
-                                        Call
-                                    </button>
-                                </li>
-                                <li>
-                                    <button onClick={() => setFilter("text")} className="btn btn-sm">
-                                        Text
-                                    </button>
-                                </li>
-                                <li>
-                                    <button onClick={() => setFilter("video")} className="btn btn-sm">
-                                        Video
+                                    <button onClick={() => setSort("oldest")} className="btn btn-sm">
+                                        oldest
                                     </button>
                                 </li>
 
