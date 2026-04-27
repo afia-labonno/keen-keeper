@@ -4,7 +4,7 @@ import FriendCard from './FriendCard';
 
 const Friends = async() => {
     
-    const data = await fetch("http://localhost:3000/data.json");
+    const data = await fetch("keen-keeper-one-nu.vercel.app/data.json");
     const friends = await data.json();
     // console.log('friends : ', friends)
 

@@ -10,7 +10,7 @@ import { MdOutlineTextsms } from "react-icons/md";
 import { RiDeleteBin2Line } from "react-icons/ri";
 
 const friendPromise = async () => {
-    const res = await fetch('http://localhost:3000/data.json');
+    const res = await fetch('keen-keeper-one-nu.vercel.app/data.json');
     const data = await res.json();
     return data;
 };
