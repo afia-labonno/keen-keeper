@@ -34,6 +34,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Project Structure
 
+```bash
 src/
 │
 ├── app/
@@ -62,7 +63,7 @@ src/
 │   ├──FriendContext.jsx
 ├── assets/
 │   └── img/
-
+```
 ---
 
 ## Installation & Setup
